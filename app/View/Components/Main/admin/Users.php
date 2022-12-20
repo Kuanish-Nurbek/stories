@@ -1,6 +1,6 @@
 <?php
 
-namespace App\View\Components\main\admin;
+namespace App\View\Components\Main\Admin;
 
 use Illuminate\View\Component;
 use App\Models\User;
