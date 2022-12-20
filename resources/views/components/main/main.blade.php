@@ -17,7 +17,8 @@
 
             {{-- если пользователь находится на главной странице--}}
             @auth
-                @if ('http://localhost/public' == url()->current() and auth() -> user() -> status == 'moderator')
+
+                @if ('https://flsweb.kz/public' == url()->current() and auth() -> user() -> status == 'moderator')
                     <div class="main-histories">
                         <div class="main-histories__title">
                             <h2 class="main-histories__title_text title">Истории на рассмотрение модератором</h2>
@@ -31,7 +32,8 @@
 
 
             {{-- если пользователь находится на главной странице--}}
-            @if ('http://localhost/public' == url()->current())
+
+            @if ('https://flsweb.kz/public' == url()->current())
                 <div class="main-histories">
                     <div class="main-histories__title">
                         <h2 class="main-histories__title_text title">Истории наших пользователей</h2>
@@ -46,7 +48,7 @@
 
 
             {{-- если пользователь авторизован и находится на главной странице--}}
-            @if (auth()->check() and 'http://localhost/public' == url()->current())
+            @if (auth()->check() and 'https://flsweb.kz/public' == url()->current())
                 <div class="main-add">
                     <div class="main-add__title">
                         <h2 class="title">Добавьте свою историю</h2>
@@ -58,7 +60,7 @@
 
 
             {{-- компонент для отображения истории данного юзера--}}
-                <x-main.user-histories/>
+                <x-main.userhistories/>
 
             @endif
 
