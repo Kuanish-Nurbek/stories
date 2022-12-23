@@ -77,7 +77,7 @@
 
             {{-- компонент для отображения юзеров данного сайта--}}
             @auth('admin')
-                <x-main.admin.users/>
+                <x-main.users/>
             @endauth
         </div>
 

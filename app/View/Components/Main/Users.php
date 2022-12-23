@@ -1,6 +1,6 @@
 <?php
 
-namespace App\View\Components\Main\Admin;
+namespace App\View\Components\Main;
 
 use Illuminate\View\Component;
 use App\Models\User;
@@ -25,8 +25,9 @@ class Users extends Component
     public function render()
     {
         $users = User::all();
+
         dd($users);
-        return view('components.main.admin.users',[
+        return view('components.main.users',[
             'users' => $users,
         ]);
     }
