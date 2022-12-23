@@ -1,6 +1,4 @@
-    @php
-        dd($aa)
-    @endphp
+
     <main class="main-content ">
         <div class="main-content_wrapper _container">
             {{-- <x-main.nav type="error" :message="$a"/> --}}
@@ -71,22 +69,7 @@
 
 
 
-
-            @if (auth()->check() and 'http://localhost/public' == url()->current())
-                <div class="main-add">
-                    <div class="main-add__title">
-                        <h2 class="title">Добавьте свою историю</h2>
-                    </div>
-                    <div class="main-add__link">
-                        <p><a href="/public/add_history" >Добваить историю</a></p>
-                    </div>
-                </div>
-
-
-            {{-- компонент для отображения истории данного юзера--}}
-                <x-main.userHistories/>
-
-            @endif
+ 
 
 
 
