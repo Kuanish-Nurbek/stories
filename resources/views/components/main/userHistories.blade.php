@@ -1,10 +1,9 @@
 
-@if (count($histories) != 0)
+@if (is_countable($histories) && count($histories) != 0)
 @php
     // записываем в сессию для того чтобы ставить в атрибут value в представлении update
     session() -> put('histories',$histories);
 @endphp
-<userhistories>
 <div class="main__user_histories user-histories">
     <div class="user-histories__title">
         <h2 class="title">Вами созданные истории</h2>
@@ -28,7 +27,6 @@
         </table>
     </div>
 </div>
-</userhistories>
 @endif
 
 
