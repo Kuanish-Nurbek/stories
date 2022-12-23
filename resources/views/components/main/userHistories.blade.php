@@ -1,4 +1,4 @@
-@if ($histories != null)
+
 @if (count($histories) != 0)
 @php
     // записываем в сессию для того чтобы ставить в атрибут value в представлении update
@@ -28,5 +28,5 @@
     </div>
 </div>
 @endif
-@endif
+
 

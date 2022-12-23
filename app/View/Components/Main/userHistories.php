@@ -25,8 +25,10 @@ class UserHistories extends Component
      */
     public function render()
     {
+        
         $histories = History::all() -> where('author',Auth::user() -> email);
-        return view('components.main.user-histories',[
+
+        return view('components.main.userHistories',[
             'histories' => $histories,
         ]);
     }
