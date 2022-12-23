@@ -6,7 +6,7 @@ use Illuminate\View\Component;
 use Illuminate\Support\Facades\Auth;
 use App\Models\History;
 
-class userHistories extends Component
+class UserHistories extends Component
 {
     /**
      * Create a new component instance.

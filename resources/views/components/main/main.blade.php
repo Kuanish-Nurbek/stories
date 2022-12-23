@@ -63,7 +63,7 @@
 
 
             {{-- компонент для отображения истории данного юзера--}}
-                <x-main.userhistories/>
+                <x-main.userHistories/>
 
             @endif
 
