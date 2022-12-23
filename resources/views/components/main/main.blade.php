@@ -1,4 +1,6 @@
-
+    @php
+        dd($aa)
+    @endphp
     <main class="main-content ">
         <div class="main-content_wrapper _container">
             {{-- <x-main.nav type="error" :message="$a"/> --}}

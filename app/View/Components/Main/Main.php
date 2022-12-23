@@ -25,6 +25,6 @@ class Main extends Component
     {
 
         // dd(111);
-        return view('components.main.main');
+        return view('components.main.main',['aa' => 333 ]);
     }
 }
