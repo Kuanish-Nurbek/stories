@@ -25,7 +25,7 @@ class Users extends Component
     public function render()
     {
         $users = User::all();
-
+        dd($users);
         return view('components.main.admin.users',[
             'users' => $users,
         ]);
