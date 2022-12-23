@@ -31,7 +31,6 @@ class Histories extends Component
             $histories = 0;
         }
         return view('components.main.histories',[
-            'cd' => 'abcd',
             'histories' => $histories,
         ]);
     }
