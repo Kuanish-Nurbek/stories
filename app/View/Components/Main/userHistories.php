@@ -1,12 +1,12 @@
 <?php
 
-namespace App\View\Components\main;
+namespace App\View\Components\Main;
 
 use Illuminate\View\Component;
 use Illuminate\Support\Facades\Auth;
 use App\Models\History;
 
-class UserHistories extends Component
+class Userhistories extends Component
 {
     /**
      * Create a new component instance.
@@ -30,7 +30,7 @@ class UserHistories extends Component
         if(!is_countable($histories)){
             $histories = 0;
         }
-        return view('components.main.userHistories',[
+        return view('components.main.userhistories',[
             'histories' => $histories,
         ]);
     }
