@@ -27,7 +27,9 @@ class UserHistories extends Component
     {
 
         $histories = History::all() -> where('author',Auth::user() -> email) -> all();
-        
+        if(!is_countable($histories)){
+            $histories = 0;
+        }
         return view('components.main.userHistories',[
             'histories' => $histories,
         ]);
