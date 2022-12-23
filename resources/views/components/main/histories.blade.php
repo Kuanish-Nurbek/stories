@@ -1,6 +1,4 @@
-@php
-    dd($cd)
-@endphp
+
 @if (is_countable($histories) && count($histories) != 0)
 @php
     // записываем в сессию для того чтобы ставить в атрибут value в представлении update
