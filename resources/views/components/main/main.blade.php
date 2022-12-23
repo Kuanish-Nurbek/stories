@@ -10,8 +10,9 @@
             @php
                 // dump(route('showHistories'));
                 // dd(url()->previous());
+                // dump(url()->current());
+                // dd(request()->getHttpHost());
             @endphp
-
 
 
 
@@ -43,6 +44,8 @@
                     </div>
                 </div>
             @endif
+
+
 
 
 
