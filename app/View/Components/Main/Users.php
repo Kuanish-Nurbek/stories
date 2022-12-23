@@ -26,7 +26,7 @@ class Users extends Component
     {
         $users = User::all();
 
-        dd($users);
+
         return view('components.main.users',[
             'users' => $users,
         ]);
