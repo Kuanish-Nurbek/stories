@@ -12,12 +12,18 @@
             </div>
         </div>
     </div>
+    <div v-for="user in users" :key="user.id">
+        {{ user.email }}
+    </div>
 </template>
 
 <script>
     export default {
         mounted() {
             console.log('Component mounted.')
+        },
+        props:{
+            users: Array
         }
-    }
+    };
 </script>

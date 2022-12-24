@@ -25,13 +25,15 @@
 
 
         <div id="app">
-            <example-component>
-                
-            </example-component>
+            <example-component :users="{{\App\Models\User::query()->limit(5)-> get()}}"> </example-component>
         </div>
+
+        {{-- @php
+            dd(\App\Models\User::query()->limit(5)-> get())
+        @endphp --}}
 
 		<x-footer.footer />
 
-        <script src='build/assets/app.9f37aa36.js'></script>
+        <script src='build/assets/app.822f5056.js'></script>
 	</body>
 </html>
