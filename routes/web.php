@@ -237,7 +237,7 @@ Route::middleware('auth:web') -> group(function(){
 
 // Route::match(['get','post'],'/account/{$id}', [UserController::class, 'showAccount']);
 
-// 123
+
 
 
 // Auth::routes()   это просто вспомогательный класс, который помогает вам генерировать все маршруты, необходимые для аутентификации пользователя
