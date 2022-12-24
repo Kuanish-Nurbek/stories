@@ -89,7 +89,8 @@ class LoginController extends Controller
 
         } elseif(Auth::guard('web')->attempt(['email' => $validated['email'], 'password' => $validated['password'],'active'=> 0])){
             $request -> session() -> regenerate();
-            return redirect() -> route('showLayout');
+            // return redirect() -> route('showLayout');
+            return redirect('/');
 
             // $check = DB::table('users')->where('email',$validated['email']) ->first();
             // // dd($check -> status);
