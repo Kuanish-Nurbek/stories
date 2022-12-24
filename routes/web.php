@@ -240,3 +240,7 @@ Route::middleware('auth:web') -> group(function(){
 // 123
 
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
