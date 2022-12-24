@@ -240,7 +240,7 @@ Route::middleware('auth:web') -> group(function(){
 // 123
 
 
-// dump(Auth::routes());
+// Auth::routes()   это просто вспомогательный класс, который помогает вам генерировать все маршруты, необходимые для аутентификации пользователя
 // Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

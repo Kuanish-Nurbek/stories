@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html>
 	<head>
 		<x-meta.meta />
@@ -24,9 +24,14 @@
 		</x-main.main>
 
 
-
+        <div id="app">
+            <example-component>
+                
+            </example-component>
+        </div>
 
 		<x-footer.footer />
 
+        <script src='build/assets/app.9f37aa36.js'></script>
 	</body>
 </html>
