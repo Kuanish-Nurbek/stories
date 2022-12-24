@@ -9,7 +9,7 @@
         <h2 class="title">Вами созданные истории</h2>
     </div>
     <div class="user-histories__body">
-        <table class="user-histories__table">
+        <table class="user-histories__table">к
             <tr>
                 <th>Title</th>
                 <th>Date</th>
