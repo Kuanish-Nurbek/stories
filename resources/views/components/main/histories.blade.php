@@ -20,8 +20,8 @@
                     <tr>
                         <td>{{$history['title']}}</td>
                         <td>{{$history['date_of_made']}}</td>
-                        <td><a href="/public/update/{{$history['id']}}">Update</a></td>
-                        <td><a href="/public/delete/{{$history['id']}}">Delete</a></td>
+                        <td><a href="/update/{{$history['id']}}">Update</a></td>
+                        <td><a href="/delete/{{$history['id']}}">Delete</a></td>
                     </tr>
                 @endforeach
         </table>

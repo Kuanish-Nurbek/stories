@@ -25,7 +25,7 @@
                             <h2 class="main-histories__title_text title">Истории на рассмотрение модератором</h2>
                         </div>
                         <div class="main-add__link">
-                            <p><a href="/public/histories_for_moderator" >Посмотореть все истории</a></p>
+                            <p><a href="/histories_for_moderator" >Посмотореть все истории</a></p>
                         </div>
                     </div>
                 @endif
@@ -40,7 +40,7 @@
                         <h2 class="main-histories__title_text title">Истории наших пользователей</h2>
                     </div>
                     <div class="main-add__link">
-                        <p><a href="/public/histories" >Посмотореть все истории</a></p>
+                        <p><a href="/histories" >Посмотореть все истории</a></p>
                     </div>
                 </div>
             @endif
@@ -57,7 +57,7 @@
                         <h2 class="title">Добавьте свою историю</h2>
                     </div>
                     <div class="main-add__link">
-                        <p><a href="/public/add_history" >Добваить историю</a></p>
+                        <p><a href="/add_history" >Добваить историю</a></p>
                     </div>
                 </div>
 
