@@ -13,16 +13,16 @@
             @endauth
 
             @if ($flag)
-                <a href="/public/admin" class="fa-solid fa-house"></a>
+                <a href="/admin" class="fa-solid fa-house"></a>
             @else
-                <a href="/public/" class="fa-solid fa-house"></a>
+                <a href="/" class="fa-solid fa-house"></a>
             @endif
 
 
             @if (!$check)
                 <span class="header_entrance_registr">
-                    <a href="/public/login"  class="header_link entrance">Войти</a>
-                    <a href="/public/registr" class="header_link registr">Зарегистрироваться</a>
+                    <a href="/login"  class="header_link entrance">Войти</a>
+                    <a href="/registr" class="header_link registr">Зарегистрироваться</a>
                 </span>
             @endif
 
@@ -35,11 +35,11 @@
                     @endauth
                     @auth('web')
                         <span class="header_login">
-                            <a href="/public/account/" class="header_login">{{$email}}</a>
+                            <a href="/account" class="header_login">{{$email}}</a>
                         </span>
                     @endauth
 
-                    <a href="/public/logout" class="header_link exit">Выйти</a>
+                    <a href="/logout" class="header_link exit">Выйти</a>
                 </span>
             @endif
         </div>
