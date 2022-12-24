@@ -240,6 +240,8 @@ Route::middleware('auth:web') -> group(function(){
 
 
 
-Auth::routes();
+// Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Route::get('/home',  [HistoryController::class, 'showLayout']) -> name('home');
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+

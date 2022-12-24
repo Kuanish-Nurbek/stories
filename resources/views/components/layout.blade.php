@@ -3,6 +3,7 @@
 	<head>
 		<x-meta.meta />
 		<title>{!! isset($title) ? $title : 'title' !!}</title>
+        @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 
 	</head>
 	<body class="className">
@@ -27,6 +28,5 @@
 
 
 		<x-footer.footer />
-
 	</body>
 </html>
