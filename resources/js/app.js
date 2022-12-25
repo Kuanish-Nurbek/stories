@@ -16,7 +16,10 @@ import { createApp } from 'vue';
 const app = createApp({});
 
 import ExampleComponent from './components/ExampleComponent.vue';
+import Users from './components/Users.vue';
+
 app.component('example-component', ExampleComponent);
+app.component('component-users', Users);
 
 /**
  * The following block of code may be used to automatically register your
