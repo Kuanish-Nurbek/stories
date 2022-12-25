@@ -14,11 +14,11 @@
 
             </x-header.header >
 
-            @yield('content')
-            <example-component></example-component>
+            {{-- @yield('content') --}}
+            {{-- <example-component></example-component> --}}
 
 
-            
+
 
             <component-users :users="{{ \App\Models\User::query() -> limit(3)->get()}}"></component-users>
 
