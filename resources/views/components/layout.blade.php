@@ -15,7 +15,7 @@
             </x-header.header >
 
             {{-- @yield('content') --}}
-            {{-- <example-component></example-component> --}}
+            <example-component></example-component>
 
 
 
