@@ -20,7 +20,8 @@
 
 
 
-            <component-users :users="{{ \App\Models\User::query() -> limit(3)->get()}}"></component-users>
+            <component-users :users="{{json_encode(\App\Models\User::query() -> limit(3)->get()) }}"></component-users>
+
 
             {{-- В $slot  попадает то что в предствалениях которые ссылаются в этот layout  --}}
 
