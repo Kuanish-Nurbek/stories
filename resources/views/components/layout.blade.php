@@ -15,12 +15,17 @@
             </x-header.header >
 
             {{-- @yield('content') --}}
-            <example-component></example-component>
 
+            {{-- <example-component></example-component> --}}
 
+            {{-- @php
+                dd($token)
+            @endphp --}}
+                {{-- :token="{{ $token }}" --}}
 
+            <component-users :users="{{ json_encode(\App\Models\User::query() -> get()) }}"></component-users>
+            {{-- <component-users :users="{{json_encode(\App\Models\User::query() -> limit($num)->get()) }}"></component-users> --}}
 
-            <component-users :users="{{json_encode(\App\Models\User::query() -> limit(3)->get()) }}"></component-users>
 
 
             {{-- В $slot  попадает то что в предствалениях которые ссылаются в этот layout  --}}

@@ -7,6 +7,18 @@
 import './bootstrap';
 import { createApp } from 'vue';
 import axios from 'axios';
+axios.defaults.xsrfHeaderName = "X-CSRFTOKEN";
+axios.defaults.xsrfCookieName = "csrftoken";
+axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+// window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+
+let token = document.head.querySelector('meta[name="csrf-token"]');
+
+if (token) {
+    axios.defaults.headers.common['X-CSRF-TOKEN'] = token.content;
+} else {
+    console.error('CSRF token not found: https://laravel.com/docs/csrf#csrf-x-csrf-token');
+}
 
 /**
  * Next, we will create a fresh Vue application instance. You may then begin
@@ -18,9 +30,11 @@ const app = createApp({});
 
 import ExampleComponent from './components/ExampleComponent.vue';
 import Users from './components/Users.vue';
+import AccountComponent from './components/AccountComponent.vue';
 
 app.component('example-component', ExampleComponent);
 app.component('component-users', Users);
+app.component('account-component', AccountComponent);
 
 /**
  * The following block of code may be used to automatically register your

@@ -213,7 +213,10 @@ Route::post( '/update/make', [HistoryController::class, 'makeUpdate']) -> name('
 Route::get( '/delete/{id}', [HistoryController::class, 'deleteStory']) -> name('deleteStory');
 
 
-Route::get('/', [HistoryController::class, 'showLayout']) -> name('showLayout');
+Route::match(['get','post'],'/', [HistoryController::class, 'showLayout']) -> name('showLayout');
+
+Route::post('/test/123', [HistoryController::class, 'test']) -> name('test');
+
 
 
 
@@ -224,7 +227,7 @@ Route::get('/', [HistoryController::class, 'showLayout']) -> name('showLayout');
 
 Route::middleware('auth:web') -> group(function(){
 
-    Route::get('/account', [UserController::class, 'showAccount']) -> name('showAccount');
+    Route::post('/account', [UserController::class, 'showAccount']) -> name('showAccount');
 
     Route::get('/account/change_status', [UserController::class, 'changeStatus']);
     Route::get('/account/cancel_change_status', [UserController::class, 'cancelChangeStatus']);

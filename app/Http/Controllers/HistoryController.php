@@ -12,8 +12,16 @@ use Illuminate\Support\Facades\Auth;
 
 class HistoryController extends Controller
 {
-    public function showLayout(){
-        return view('components.layout');
+    public function showLayout(Request $request){
+        // $token = $request->session()->token();
+        // // dd($token);
+        $token = csrf_token();
+        // dd($token);
+        // if(isset($_REQUEST['id'])){
+        //     dd(444);
+        //     redirect()->back();
+        // }
+        return view('components.layout',['token'=> $token]);
     }
 
     public function showHistories(){
@@ -116,5 +124,17 @@ class HistoryController extends Controller
             'active' => 0,
         ]);
         return redirect() -> route('historiesModeratorShow');
+    }
+
+    public function test(Request $request){
+        // $token = $request->session()->token();
+
+        // $token = csrf_token();
+    //    return redirect() -> route('historiesModeratorShow');
+        // return view('myProject.history.update');
+        dd('hello');
+        // session() -> flush();
+        // return view('product');
+
     }
 }

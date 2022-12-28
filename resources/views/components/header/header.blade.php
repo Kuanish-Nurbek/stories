@@ -35,7 +35,8 @@
                     @endauth
                     @auth('web')
                         <span class="header_login">
-                            <a href="/account" class="header_login">{{$email}}</a>
+                            {{-- <a href="/account" class="header_login">{{$email}}</a> --}}
+                            <a href="{{route('showAccount')}}" class="header_login">{{$email}}</a>
                         </span>
                     @endauth
 
