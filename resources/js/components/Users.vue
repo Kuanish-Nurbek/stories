@@ -5,24 +5,26 @@
     <div  v-for="user in users.slice(0,count)" :key="user.id" >
         <p>{{ user.email }}</p>
     </div>
+    <div>
+        <ul v-for="item in items">
+            <li v-if="item % 2 === 0 && item > 0">{{item}}</li>
+        </ul>
+    </div>
 
-
-    <form action="/test/123" method="POST">
-        <input type="hidden" name="_token" :value="token" />
-        <input type="text">
-        <input name="id" type="submit" @click="send()">
-    </form>
 
     <button @click="get()"></button>
-
-    {{ token }}
-    <!-- {{ info }} -->
     {{ item }}
+    <br>
+
+    <!-- {{ info }} -->
+
+    <user-name-component @btnClicked="btnClicked($event)"></user-name-component>
+    <user-test-component :isVisibleBlockTest = "isVisibleBlockTest"></user-test-component>
 
 </template>
 
 <script>
-// import { vModelCheckbox } from 'vue';
+    // import { vModelCheckbox } from 'vue';
 
 
 
@@ -39,11 +41,11 @@
             // axios.get('/?id=' + this.counter).then(function (response){
             //     console.log(response);
             // }).then(function(){}).then(json => console.log(json))
-                this.tok = this.token
+                // this.tok = this.token
         },
         props: {
             users: [],
-            token: '',
+            // tok: "",
         },
 
         data() {
@@ -51,7 +53,9 @@
                 info: null,
                 count: 5,
                 item: '',
-                tok: null
+                items: [1, -2, 3, -4, 5, 6, 7, 9, 8],
+                isVisibleBlockTest: false,
+                textForTestComponet: '',
             }
         },
         methods:{
@@ -92,7 +96,7 @@
                 //     console.log(error)
                 // })
 
-                axios.post('', {
+                axios.post('/test/123', {
                     firstName: 'Fred',
                     lastName: 'Flintstone'
                 })
@@ -101,12 +105,21 @@
                 })
                 .catch(function (error) {
                     console.log(error);
-                });
+                })
             },
 
             updateCount(change) {
                 this.count = Math.max(0, Math.min(10, this.count + change));
             },
+
+            sendPost() {
+
+            },
+
+            btnClicked(event){
+                this.textForTestComponet = event;
+                this.isVisibleBlockTest = !this.isVisibleBlockTest;
+            }
 
         }
 

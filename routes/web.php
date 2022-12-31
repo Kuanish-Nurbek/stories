@@ -199,6 +199,8 @@ Route::middleware('auth:admin') -> group(function(){
 
 Route::post('/histories/change_select', [PaginationController::class, 'showHistories'])-> name('changeSelect');
 
+Route::post('/histories/change_select_axios', [PaginationController::class, 'showHistoriesForAxios'])-> name('changeSelectAxios');
+
 Route::get('/histories', [PaginationController::class, 'showHistories']) -> name('showHistories');
 
 Route::match(['get','post'],'/history/{id}', [HistoryController::class, 'showHistory']);
@@ -227,7 +229,7 @@ Route::post('/test/123', [HistoryController::class, 'test']) -> name('test');
 
 Route::middleware('auth:web') -> group(function(){
 
-    Route::post('/account', [UserController::class, 'showAccount']) -> name('showAccount');
+    Route::get('/account', [UserController::class, 'showAccount']) -> name('showAccount');
 
     Route::get('/account/change_status', [UserController::class, 'changeStatus']);
     Route::get('/account/cancel_change_status', [UserController::class, 'cancelChangeStatus']);

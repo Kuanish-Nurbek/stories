@@ -24,8 +24,5 @@
             @endif
         </div>
    </div>
-   <form action="" method="POST">
-    
-   </form>
    <account-component></account-component>
 </x-layout>

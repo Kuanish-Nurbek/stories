@@ -15,13 +15,13 @@ class HistoryController extends Controller
     public function showLayout(Request $request){
         // $token = $request->session()->token();
         // // dd($token);
-        $token = csrf_token();
+        // $token = csrf_token();
         // dd($token);
         // if(isset($_REQUEST['id'])){
         //     dd(444);
         //     redirect()->back();
         // }
-        return view('components.layout',['token'=> $token]);
+        return view('components.layout');
     }
 
     public function showHistories(){
@@ -55,7 +55,7 @@ class HistoryController extends Controller
                 'date_of_made' => date("Y-m-d"),
             ]);
 
-            $request->session()->flash('success', 'Ваша история добавлен');
+            $request->session()->flash('success', 'Ваша история будет добавлена после рассмотрения модератором');
 
             return redirect('add_history');
         }else {
@@ -132,9 +132,24 @@ class HistoryController extends Controller
         // $token = csrf_token();
     //    return redirect() -> route('historiesModeratorShow');
         // return view('myProject.history.update');
-        dd('hello');
+        // dump('hello');
         // session() -> flush();
         // return view('product');
+        // dd($request);
+        // dd($_POST['firstName']);
+
+        // $data = json_decode(file_get_contents("php://input"), TRUE);
+        // $id = $data['id'];
+        // dump($data);
+        // $data = json_decode(file_get_contents("php://input"), TRUE);
+        // $id = $data['id'];
+        // dd($data);
+
+        DB::table('cars') -> insert([
+            'model' => $request -> text,
+            'mechanic_id' => 1
+        ]);
+        return $request -> text;
 
     }
 }

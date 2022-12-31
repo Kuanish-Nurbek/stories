@@ -6,25 +6,32 @@
 @endphp
 <div class="main__user_histories user-histories">
     <div class="user-histories__title">
-        <h2 class="title">Вами созданные истории</h2>
+        <h2 class="title text-center p-5 mt-5 mb-3 rounded" style = 'background-color:#E9E8DD;'>Вами созданные истории</h2>
     </div>
     <div class="user-histories__body">
-        <table class="user-histories__table">
-            <tr>
-                <th>Title</th>
-                <th>Date</th>
-                <th>Update</th>
-                <th>Delete</th>
-            </th>
+        <table class="table">
+            <thead>
+              <tr>
+                {{-- <th scope="col">#</th> --}}
+                <th scope="col">Title</th>
+                <th scope="col">Date</th>
+                <th scope="col">Update</th>
+                <th scope="col">Delete</th>
+              </tr>
+            </thead>
+            <tbody>
                 @foreach ($histories as $history )
-                    <tr>
-                        <td>{{$history['title']}}</td>
-                        <td>{{$history['date_of_made']}}</td>
-                        <td><a href="/update/{{$history['id']}}">Update</a></td>
-                        <td><a href="/delete/{{$history['id']}}">Delete</a></td>
-                    </tr>
-                @endforeach
-        </table>
+                <tr>
+                    <td>{{$history['title']}}</td>
+                    <td>{{$history['date_of_made']}}</td>
+                    <td><a href="/update/{{$history['id']}}">Update</a></td>
+                    <td><a href="/delete/{{$history['id']}}">Delete</a></td>
+                </tr>
+            @endforeach
+            </tbody>
+          </table>
+
+
     </div>
 </div>
 @endif

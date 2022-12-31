@@ -33,4 +33,12 @@ class PaginationController extends Controller
         }
 
     }
+
+    public function showHistoriesForAxios(Request $request){
+
+        // $histories = History::paginate($request -> selected);
+        $histories = History::all();
+
+        return $histories;
+    }
 }

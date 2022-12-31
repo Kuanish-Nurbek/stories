@@ -28,4 +28,12 @@ class AddHistoryRequest extends FormRequest
             'text' => ['required','max:255','min:50']
         ];
     }
+
+    public function messages(){
+        return [
+            'required' => 'это поле обязательно к заполнению',
+            'min' => 'Тема истроии  должен имет минимум :min символов',
+            'max' => 'Текст должен имет максимум :max символов',
+        ];
+    }
 }

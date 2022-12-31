@@ -20,7 +20,7 @@
             @auth
 
                 @if (route('showLayout') == url()->current() and auth() -> user() -> status == 'moderator')
-                    <div class="main-histories">
+                    <div class="main-histories text-center p-5 mt-5 mb-5 rounded" style = 'background-color:#E9E8DD;'>
                         <div class="main-histories__title">
                             <h2 class="main-histories__title_text title">Истории на рассмотрение модератором</h2>
                         </div>
@@ -35,7 +35,7 @@
             {{-- если пользователь находится на главной странице--}}
 
             @if (route('showLayout') == url()->current())
-                <div class="main-histories">
+                <div class="main-histories text-center p-5 mt-5 mb-5 rounded" style = 'background-color:#E9E8DD;'>
                     <div class="main-histories__title">
                         <h2 class="main-histories__title_text title">Истории наших пользователей</h2>
                     </div>
@@ -52,7 +52,7 @@
 
             {{-- если пользователь авторизован и находится на главной странице--}}
             @if (auth()->check() and route('showLayout') == url()->current())
-                <div class="main-add">
+                <div class="main-add text-center p-5 mt-5 mb-5 rounded" style = 'background-color:#E9E8DD;'>
                     <div class="main-add__title">
                         <h2 class="title">Добавьте свою историю</h2>
                     </div>
