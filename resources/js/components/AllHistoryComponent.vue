@@ -37,7 +37,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- {{ data }} -->
         </template>
     </div>
 </template>
@@ -46,11 +45,8 @@
 
     export default {
         mounted() {
-                axios.post('/histories/change_select_axios',
-                    {
-
-                    }
-                ).then(response => {
+                axios.post('/histories/change_select_axios',{})
+                .then(response => {
                     console.log(response.data);
                     this.data = response.data;
                 });
@@ -77,7 +73,7 @@
                 this.num = event.target.value;
                 axios.post('/histories/change_select_axios',
                     {
-                        // selected: event.target.value,
+                        selected: event.target.value,
                     }
                 ).then(response => {
                     console.log(response.data);
