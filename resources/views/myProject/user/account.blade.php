@@ -5,8 +5,8 @@
 
 
    <div class="account">
-        <div class="account__title">
-            <h2 class="title">Ваши данные</h2>
+        <div class="text-center p-5 mt-5 mb-5 rounded" style = 'background-color:#E9E8DD;'>
+            <h2>Ваши данные</h2>
         </div>
         <div class="account__body">
             <p>email:  {{$userData -> email}} </p>
@@ -24,5 +24,5 @@
             @endif
         </div>
    </div>
-   <account-component></account-component>
+   {{-- <account-component></account-component> --}}
 </x-layout>

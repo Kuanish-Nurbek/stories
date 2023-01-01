@@ -1,6 +1,20 @@
 
     <main class="main-content ">
         <div class="main-content_wrapper _container">
+
+            @if (!auth()->check() and route('showLayout') == url()->current())
+                <div class="main-histories text-center p-5 mt-5 mb-5 rounded" style = 'background-color:#E9E8DD; margin-top:200px !important;'>
+                    <div class="main-histories__title">
+                        <h2 class="main-histories__title_text title">Добро пожаловать на мой сайт</h2>
+                    </div>
+                    <div class="main-add__link">
+                        <p>здесь вы можете посмотреть наши интересные историй и не только . . .</p>
+
+                        <p>Что бы добавить вашу историю вам нужно будет <a href="/login" >авторизоваться</a>  или <a href="/registr" >зарегистрироваться</a></p>
+                    </div>
+                </div>
+            @endif
+
             {{-- <x-main.nav type="error" :message="$a"/> --}}
             {{-- <x-main.nav/> --}}
 
@@ -64,7 +78,6 @@
 
             {{-- компонент для отображения истории данного юзера--}}
                 <x-main.histories/>
-
             @endif
 
 

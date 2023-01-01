@@ -1,6 +1,6 @@
 <template>
-
-    <form action="/public/histories/change_select" style="display: block; text-align:right;" method="POST">
+    <div class="form-text">Вы можете выбрать сколько историй показать на одной странице</div>
+    <form action="/public/histories/change_select" style="display: block; text-align:right;" method="POST" class="mb-3">
         <select @change="changeSelect($event)" class="form-select form-select-sm" aria-label=".form-select-sm example">
             <option name=select-item value="5"  >5</option>
             <option name=select-item value="10"  >10</option>
@@ -19,7 +19,20 @@
                     </h2>
                     <div :id="'teg'+index" class="accordion-collapse collapse show" :aria-labelledby="'header'+index" data-bs-parent="#accordionExample">
                     <div class="accordion-body">
-                        <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Тайтл</th>
+                                    <th scope="col">Текст</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>{{item.title}}</td>
+                                    <td>{{item.text}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                     </div>
                 </div>
@@ -33,7 +46,20 @@
                     </h2>
                     <div :id="'teg'+index" class="accordion-collapse collapse" :aria-labelledby="'header'+index" data-bs-parent="#accordionExample">
                         <div class="accordion-body">
-                        <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                            <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Тайтл</th>
+                                    <th scope="col">Текст</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>{{item.title}}</td>
+                                    <td>{{item.text}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
                         </div>
                     </div>
                 </div>

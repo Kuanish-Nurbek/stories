@@ -7,23 +7,7 @@
             <h2 class="main-histories__title_text title">Истории наших пользователей</h2>
         </div>
 
-
-
         <all-history-component></all-history-component>
-{{--
-        @if(!empty($histories))
-            @foreach ($histories as $history)
-                <p><a href="/public/history/{{$history -> id}}">{{$history -> title}}</a></p>
-
-            @endforeach
-
-            {{$histories -> links()}}
-
-
-        @endif --}}
-
-
-
 
     </div>
 
