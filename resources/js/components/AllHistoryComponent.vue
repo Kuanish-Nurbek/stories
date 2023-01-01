@@ -37,7 +37,7 @@
                         </div>
                     </div>
                 </div>
-
+                <!-- {{ data }} -->
         </template>
     </div>
 </template>
@@ -45,13 +45,22 @@
     import axios from 'axios';
 
     export default {
+        mounted() {
+                axios.post('/histories/change_select_axios',
+                    {
+
+                    }
+                ).then(response => {
+                    console.log(response.data);
+                    this.data = response.data;
+                });
+        },
         data() {
             return {
                 text: '',
-                num: 0,
+                num: 5,
                 data: null,
                 first: true,
-
             };
         },
         methods: {
@@ -68,7 +77,7 @@
                 this.num = event.target.value;
                 axios.post('/histories/change_select_axios',
                     {
-                        selected: event.target.value,
+                        // selected: event.target.value,
                     }
                 ).then(response => {
                     console.log(response.data);

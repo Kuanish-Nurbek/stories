@@ -103,7 +103,7 @@ class LoginController extends Controller
             // }
 
         }else {
-            $request -> session() -> put('errorLog','неправильный логин или пороль');
+            $request -> session() -> put('errorLog','неправильный логин или пароль');
             return redirect('login') -> withInput();
         }
     }
