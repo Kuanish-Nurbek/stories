@@ -13,11 +13,9 @@
             @endauth
 
             @if ($flag)
-                {{-- <a href="/admin" class="fa-solid fa-house header_link" style="color: white !important;"></a> --}}
-                <a href="/admin" class="fa-solid fa-mug-hot header_link" style="color: white !important;"></a>
+                <a href="/admin" class="fa-solid fa-house header_link" style="color: white !important;"></a>
             @else
-                {{-- <a href="/" class="fa-solid fa-house" style="color: white !important;"></a> --}}
-                <a href="/" class="fa-solid fa-mug-hot" style="color: white !important;"></a>
+                <a href="/" class="fa-solid fa-house" style="color: white !important;"></a>
 
 
             @endif
