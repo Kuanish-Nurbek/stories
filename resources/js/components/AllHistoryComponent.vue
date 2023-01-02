@@ -22,7 +22,7 @@
 
         <template v-if="data" v-for="(item, index) in data.slice(start,count)" :key="item.id">
 
-            <div v-if="first" class="accordion-item">
+            <div v-if="first" class="accordion-item mb-3">
                 {{ firstTogle }} <!-- здесь значение first делаем false -->
 
                 <h2 class="accordion-header" :id="'header'+index">
@@ -50,7 +50,7 @@
                 </div>
             </div>
 
-            <div v-else-if="!first" class="accordion-item">
+            <div v-else-if="!first" class="accordion-item mb-3">
                 <h2 class="accordion-header" :id="'header'+index">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" :data-bs-target="'#teg'+index" aria-expanded="false" :aria-controls="'teg'+index">
                         {{item.title}}

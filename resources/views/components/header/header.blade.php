@@ -23,8 +23,8 @@
 
             @if (!$check)
                 <span class="header_entrance_registr">
-                    <a href="/login"  class="header_link entrance me-5 header_link">Войти</a>
-                    <a href="/registr" class="header_link registr header_link">Зарегистрироваться</a>
+                    <a href="/login"  class="header_link entrance me-5 header_link">войти</a>
+                    <a href="/registr" class="header_link registr header_link">зарегистрироваться</a>
                 </span>
             @endif
 
@@ -41,7 +41,7 @@
                         </span>
                     @endauth
 
-                    <a href="/logout" class="header_link exit">Выйти</a>
+                    <a href="/logout" class="header_link exit">выйти</a>
                 </span>
             @endif
         </div>
