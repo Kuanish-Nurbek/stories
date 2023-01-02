@@ -10,8 +10,13 @@
         </select>
     </form>
     <div class="accordion" id="accordionExample">
+        <template v-if="data">
+            {{ makeArrCounter(show) }}
+            {{ arrCounter }}
+        </template>
+
         <template v-for="(item, index) in data" :key="item.id">
-                <div v-if="index == 0 && index < num" class="accordion-item 111">
+                <div v-if="index == 0 && index < show" class="accordion-item 111">
                     <h2 class="accordion-header" :id="'header'+index">
                     <button class="accordion-button" type="button" data-bs-toggle="collapse" :data-bs-target="'#teg'+index" aria-expanded="true" :aria-controls="'teg'+index">
                         {{item.title}} #{{index+1}}
@@ -38,7 +43,7 @@
                 </div>
 
 
-                <div v-else-if="index > 0 && index < num" class="accordion-item">
+                <div v-else-if="index > 0 && index < show" class="accordion-item">
                     <h2 class="accordion-header" :id="'header'+index">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" :data-bs-target="'#teg'+index" aria-expanded="false" :aria-controls="'teg'+index">
                             {{item.title}} #{{ index+1 }}
@@ -77,13 +82,25 @@
                     this.data = response.data;
                 });
         },
+        props: {
+
+        },
         data() {
             return {
-                text: '',
-                num: 5,
+                show: 5,
                 data: null,
                 first: true,
+                arrCounter: [],
+                arrCounterLength: null,
             };
+        },
+        computed: {
+            getArrLength(){
+               return this.arrCounter.length;
+            },
+            setEmptyArr(){
+               return this.arrCounter.length = 0;
+            },
         },
         methods: {
             onCreatePost() {
@@ -96,7 +113,7 @@
                 });
             },
             changeSelect(event) {
-                this.num = event.target.value;
+                this.show = event.target.value;
                 axios.post('/histories/change_select_axios',
                     {
                         selected: event.target.value,
@@ -105,7 +122,23 @@
                     console.log(response.data);
                     this.data = response.data;
                 });
-            }
+            },
+            makeArrCounter(show) {
+                this.setEmptyArr;
+
+                for (let index = 1; index < Math.ceil(this.data.length / this.show); index++) {
+                    if(this.getArrLength === 0){
+                        this.arrCounter[0] = 0;
+                        this.arrCounter[index] = show;
+                    }else {
+
+                        this.arrCounter[index] = this.arrCounter[index - 1] + this.show;
+                    }
+                };
+
+
+                console.log(this.arrCounter);
+            },
         }
     }
 </script>
