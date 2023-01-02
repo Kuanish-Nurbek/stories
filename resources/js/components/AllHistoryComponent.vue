@@ -23,7 +23,7 @@
                             <thead>
                                 <tr>
                                     <th scope="col">Тайтл</th>
-                                    <th scope="col">Текст</th>
+                                    <th scope="col">Текст </th>
                                 </tr>
                             </thead>
                             <tbody>
