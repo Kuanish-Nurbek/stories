@@ -1,79 +1,89 @@
 <template>
+
     <div class="form-text">Вы можете выбрать сколько историй показать на одной странице</div>
+
     <form action="/public/histories/change_select" style="display: block; text-align:right;" method="POST" class="mb-3">
         <select @change="changeSelect($event)" class="form-select form-select-sm" aria-label=".form-select-sm example">
             <option name=select-item value="5">5  </option>
             <option name=select-item value="10">10</option>
+            <option name=select-item value="15">15</option>
             <option name=select-item value="20">20</option>
             <option name=select-item value="30">30</option>
             <option name=select-item value="50">50</option>
         </select>
     </form>
+
+
+
     <div class="accordion" id="accordionExample">
 
-<!-- после получение data заполняем массив arrCounter с данными типа [5,10,15,20] для пагинации от сюда потом возьмем start and count-->
-<template v-if="data">{{ makeArrCounter }}</template>
+        <!-- после получение data заполняем массив arrCounter с данными типа [5,10,15,20] для пагинации от сюда потом возьмем start and count-->
+        <template v-if="data">{{ makeArrCounter }}</template>
 
-<template v-if="data" v-for="(item, index) in data.slice(start,count)" :key="item.id">
+        <template v-if="data" v-for="(item, index) in data.slice(start,count)" :key="item.id">
 
-        <div v-if="first" class="accordion-item">
-            {{ firstTogle }} <!-- здесь значение first делаем false -->
+            <div v-if="first" class="accordion-item">
+                {{ firstTogle }} <!-- здесь значение first делаем false -->
 
-            <h2 class="accordion-header" :id="'header'+index">
-            <button class="accordion-button" type="button" data-bs-toggle="collapse" :data-bs-target="'#teg'+index" aria-expanded="true" :aria-controls="'teg'+index">
-                {{item.title}}
-            </button>
-            </h2>
-            <div :id="'teg'+index" class="accordion-collapse collapse show" :aria-labelledby="'header'+index" data-bs-parent="#accordionExample">
-            <div class="accordion-body">
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th scope="col">Тайтл</th>
-                            <th scope="col">Текст</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>{{item.title}}</td>
-                            <td>{{item.text}}</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            </div>
-        </div>
-
-
-        <div v-else-if="!first" class="accordion-item">
-            <h2 class="accordion-header" :id="'header'+index">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" :data-bs-target="'#teg'+index" aria-expanded="false" :aria-controls="'teg'+index">
+                <h2 class="accordion-header" :id="'header'+index">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" :data-bs-target="'#teg'+index" aria-expanded="true" :aria-controls="'teg'+index">
                     {{item.title}}
                 </button>
-            </h2>
-            <div :id="'teg'+index" class="accordion-collapse collapse" :aria-labelledby="'header'+index" data-bs-parent="#accordionExample">
-                <div class="accordion-body">
-                    <table class="table">
-                    <thead>
-                        <tr>
-                            <th scope="col">Тайтл</th>
-                            <th scope="col">Текст</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>{{item.title}}</td>
-                            <td>{{item.text}}</td>
-                        </tr>
-                    </tbody>
-                </table>
+                </h2>
+                <div :id="'teg'+index" class="accordion-collapse collapse show" :aria-labelledby="'header'+index" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Тайтл</th>
+                                    <th scope="col">Текст</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>{{item.title}}</td>
+                                    <td>{{item.text}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
-        </div>
-</template>
-<template v-if="data">  <!-- после получение data -->
+
+            <div v-else-if="!first" class="accordion-item">
+                <h2 class="accordion-header" :id="'header'+index">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" :data-bs-target="'#teg'+index" aria-expanded="false" :aria-controls="'teg'+index">
+                        {{item.title}}
+                    </button>
+                </h2>
+                <div :id="'teg'+index" class="accordion-collapse collapse" :aria-labelledby="'header'+index" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Тайтл</th>
+                                    <th scope="col">Текст</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>{{item.title}}</td>
+                                    <td>{{item.text}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </template>
+
+
+
+
+
+        <template v-if="data">  <!-- после получение data -->
             <nav aria-label="Пример навигации по страницам" class="mt-3 row justify-content-center">
-                <ul class="pagination col-4">
+                <ul class="pagination col-4 justify-content-center">
                     <li class="page-item">
                         <a class="page-link" href="#" aria-label="Предыдущая">
                             <span aria-hidden="true">&laquo;</span>
@@ -97,12 +107,15 @@
                 </ul>
             </nav>
         </template>
-<!-- здесь значение first делаем true d -->
-{{ firstTogle }}      <!-- для проверки первого элемента аккордиона возвращает  true or false -->
+        <!-- здесь значение first делаем true d -->
+        {{ firstTogle }}      <!-- для проверки первого элемента аккордиона возвращает  true or false -->
+    </div>
 
-</div>
-    {{ arrCounter }}
 </template>
+
+
+
+
 <script>
     import axios from 'axios';
 
