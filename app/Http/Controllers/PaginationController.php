@@ -37,7 +37,7 @@ class PaginationController extends Controller
     public function showHistoriesForAxios(Request $request){
 
         // $histories = History::paginate($request -> selected);
-        $histories = History::all();
+        $histories = History::where('active', 1) -> get();
 
         return $histories;
     }
