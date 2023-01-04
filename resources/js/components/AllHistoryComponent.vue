@@ -6,7 +6,7 @@
         </div>
         <form @submit.prevent>
             <div class="mb-3">
-                <label for="exampleInputEmail1" class=" form-text">Введите хештег без '#' пример: спорт природа</label>
+                <label for="exampleInputEmail1" class=" form-text">Введите хештег без '#' пример: sport travel</label>
                 <input type="search" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" v-model="searchData" @change="searchOfhashtag($event)">
                 <label v-if="dataFromSearch && dataFromSearch.length > 0" for="exampleInputEmail1" class=" form-text">{{ 'Найдено ' + dataFromSearch.length + (dataFromSearch.length === 1 ? ' история' : ' историй') + ' по данному хештегу' }}</label>
                 <label v-if="dataFromSearch && dataFromSearch.length == 0" for="exampleInputEmail1" class=" form-text">{{ 'По данному хештегу историй не найдено' }}</label>
